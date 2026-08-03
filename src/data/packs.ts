@@ -11,35 +11,44 @@ export interface Pack {
   featured?: boolean;
 }
 
-export const packs: Pack[] = [
+export const packs: Pack[] = [ 
   {
     id: 'decouverte',
-    name: 'Découverte',
-    tagline: 'One-shot, scénario bouclé en une soirée',
-    price: 'à partir de 35 €',
+    name: 'Initiation & One-Shot',
+    tagline: 'One-shot, scénario bouclé en une soirée (Particuliers)',
+    price: 'à partir de 40 €',
     priceDetail: 'par joueur',
     format: '3 à 4 heures, présentiel ou en ligne',
     includes: [
+      'Entretien préalable de 15 minutes avec l'organisateur (Choix de jeu & Ambiance)'
       'Scénario complet, aucune expérience requise',
+      'Outils de Sécurité Emtionnnelle (Carte X - Ligne & voiles)',
       'Personnages prétirés fournis',
       "Univers au choix parmi les 4 proposés",
-      'Compte-rendu de partie envoyé après coup',
+      'Musiques d'ambiance, cartes / VTT configuré',
+      'Collation incluse : Bière (locale/artisanale), saucisson & bonbons',
+      '1 bouteille de soft par groupe (Coca, Oasis ou Ice-Tea)',
+      'Déplacement inclus dans un rayon de 30 km (Saint-Didier-sous-Riverie, Lyon, Saint-Étienne...)'
     ],
     bestFor: 'Anniversaire, EVG/EVJF, soirée entre amis, premier essai',
     sigil: 'compass',
   },
   {
     id: 'mini-chronique',
-    name: 'Mini-Chronique',
+    name: 'Série & Chronique (Particuliers)',
     tagline: 'Un arc narratif complet, sans engagement long',
-    price: 'à partir de 140 €',
+    price: 'à partir de 135 € / Joueur',
     priceDetail: 'pour 3 à 5 sessions',
     format: 'Sessions de 3h, rythme au choix du groupe',
     includes: [
-      'Création de personnages accompagnée',
+      'Création de personnages accompagnée, lors de la session 0',
       'Arc narratif écrit sur mesure pour le groupe',
       'Suivi de progression entre les sessions',
+      'Résumé des épisodes rédigés entre chaque session',
       'Univers au choix parmi les 4 proposés',
+      'Collation incluse : Bière (locale/artisanale), saucisson & bonbons',
+      '1 bouteille de soft par groupe (Coca, Oasis ou Ice-Tea)',
+      'Déplacement inclus dans un rayon de 30 km (Saint-Didier-sous-Riverie, Lyon, Saint-Étienne...)'
     ],
     bestFor: 'Un groupe soudé qui veut voir ses personnages évoluer',
     sigil: 'scroll',
@@ -49,7 +58,7 @@ export const packs: Pack[] = [
     id: 'legende',
     name: 'Légende',
     tagline: 'Prestation clé-en-main, présentiel premium',
-    price: 'sur devis',
+    price: '88€ / joueurs',
     priceDetail: 'selon mise en scène',
     format: 'Présentiel, matériel complet inclus',
     includes: [
@@ -57,6 +66,9 @@ export const packs: Pack[] = [
       'Figurines peintes et bande-son dédiée',
       'Props immersifs (courriers, objets, fioles...)',
       'Scénario entièrement personnalisé',
+      'Collation incluse : Bière (locale/artisanale), saucisson & bonbons',
+      '1 bouteille de soft par groupe (Coca, Oasis ou Ice-Tea)',
+      'Déplacement inclus dans un rayon de 30 km (Saint-Didier-sous-Riverie, Lyon, Saint-Étienne...)'
     ],
     bestFor: 'Un moment marquant, événement privé ou cadeau exceptionnel',
     sigil: 'seal',
