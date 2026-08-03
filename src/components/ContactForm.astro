@@ -46,6 +46,23 @@ import { packs } from '../data/packs';
     </div>
   </div>
 
+  <div class="form-group">
+      <label for="phone">Numéro de téléphone *</label>
+      <input type="tel" id="phone" name="phone" required placeholder="06 12 34 56 78" />
+    </div>
+  </div>
+
+  <div class="form-group">
+      <label for="participants">Nombre de participants estimé</label>
+      <input type="number" id="participants" name="participants" min="1" placeholder="Ex: 8" />
+  </div>
+
+  <div class="form-group">
+    <label for="location">Lieu de l'événement (Ville ou code postal) *</label>
+    <input type="text" id="location" name="location" required placeholder="Ex: Saint-Didier-sous-Riverie, Lyon, ..." />
+    <small class="help-text">Basé à Saint-Didier-sous-Riverie (69440) — déplacements dans toute la région Rhône-Alpes.</small>
+  </div>
+
   <div class="grid gap-6 sm:grid-cols-2">
     <div>
       <label for="game" class="mb-2 block font-mono text-xs tracked-caps text-parchment-dim">
