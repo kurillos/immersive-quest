@@ -1,0 +1,59 @@
+---
+import Sigil from './Sigil.astro';
+import type { Pack } from '../data/packs';
+
+interface Props {
+  pack: Pack;
+}
+
+const { pack } = Astro.props;
+---
+
+<div
+  class:list={[
+    'relative flex flex-col border p-7',
+    pack.featured
+      ? 'border-gold bg-ink-raised shadow-[0_0_0_1px_rgba(184,146,74,0.25)]'
+      : 'border-white/10 bg-ink-raised',
+  ]}
+>
+  {pack.featured && (
+    <span class="absolute -top-3 left-7 rounded-sm bg-gold px-3 py-1 font-mono text-[10px] tracked-caps text-ink">
+      Le plus choisi
+    </span>
+  )}
+
+  <div class="flex items-start justify-between">
+    <div>
+      <h3 class="font-display text-xl text-parchment">{pack.name}</h3>
+      <p class="mt-2 max-w-[22ch] font-body text-sm leading-relaxed text-parchment-dim">{pack.tagline}</p>
+    </div>
+    <Sigil name={pack.sigil} class="h-8 w-8 shrink-0 text-gold/70" />
+  </div>
+
+  <div class="mt-6 border-t border-white/10 pt-5">
+    <p class="font-display text-2xl text-gold">{pack.price}</p>
+    <p class="font-mono text-[11px] tracked-caps text-parchment-dim">{pack.priceDetail}</p>
+    <p class="mt-2 font-mono text-[11px] text-parchment-dim">{pack.format}</p>
+  </div>
+
+  <ul class="mt-6 flex-1 space-y-2.5">
+    {pack.includes.map((item) => (
+      <li class="flex gap-3 font-body text-sm leading-relaxed text-parchment-dim">
+        <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-gold"></span>
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+
+  <p class="mt-6 border-t border-white/10 pt-4 font-body text-xs italic text-parchment-dim/80">
+    Idéal pour : {pack.bestFor}
+  </p>
+
+  <a
+    href="/contact"
+    class="mt-6 inline-block rounded-sm border border-gold/50 px-5 py-2.5 text-center font-mono text-xs tracked-caps text-gold transition-colors hover:bg-gold hover:text-ink"
+  >
+    Demander ce pack
+  </a>
+</div>

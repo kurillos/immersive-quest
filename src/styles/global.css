@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --ink: #14131a;
+  --ink-raised: #1b1a23;
+  --parchment: #ede6d3;
+  --parchment-dim: #a89f8a;
+  --gold: #b8924a;
+  --gold-soft: rgba(184, 146, 74, 0.35);
+  --blood: #7a2632;
+
+  /* Signature accents, one per univers */
+  --dnd: #c9a227;
+  --cthulhu: #4a7a6b;
+  --sotdl: #8b2c3a;
+  --vampire: #7a4a68;
+
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Spectral', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+@theme {
+  --color-ink: var(--ink);
+  --color-ink-raised: var(--ink-raised);
+  --color-parchment: var(--parchment);
+  --color-parchment-dim: var(--parchment-dim);
+  --color-gold: var(--gold);
+  --color-blood: var(--blood);
+  --color-dnd: var(--dnd);
+  --color-cthulhu: var(--cthulhu);
+  --color-sotdl: var(--sotdl);
+  --color-vampire: var(--vampire);
+  --color-gold-soft: var(--gold-soft);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--ink);
+  color: var(--parchment);
+  font-family: var(--font-body);
+  position: relative;
+}
+
+/* Grain texture, subtle, non-negotiable ambience */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.tracked-caps {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Focus visibility kept intentional, not stripped */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

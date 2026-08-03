@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PackCard from '../components/PackCard.astro';
+import { packs } from '../data/packs';
+---
+
+<Layout
+  title="Tarifs & packs"
+  description="Quatre formules pour vos parties de jeu de rôle : Découverte, Mini-Chronique, Légende et Team-Building. Tarifs et contenu de chaque pack."
+>
+  <section class="mx-auto max-w-6xl px-6 py-20">
+    <p class="font-mono text-xs tracked-caps text-gold">La grille</p>
+    <h1 class="mt-4 max-w-2xl font-display text-4xl text-parchment sm:text-5xl">Un pack pour chaque table</h1>
+    <p class="mt-5 max-w-2xl font-body leading-relaxed text-parchment-dim">
+      Du one-shot d'anniversaire à l'atelier d'entreprise, chaque formule est pensée pour une occasion précise.
+      Les prix sont indicatifs — chaque devis est ajusté au groupe et à l'univers choisi.
+    </p>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+      {packs.map((pack) => <PackCard pack={pack} />)}
+    </div>
+
+    <div class="mt-16 border border-white/10 bg-ink-raised p-8 sm:p-10">
+      <p class="font-mono text-xs tracked-caps text-gold">Un doute sur la formule ?</p>
+      <h2 class="mt-3 font-display text-2xl text-parchment">Décrivez-moi votre groupe, je vous conseille.</h2>
+      <p class="mt-3 max-w-xl font-body text-sm leading-relaxed text-parchment-dim">
+        Nombre de joueurs, occasion, univers qui vous attire : quelques lignes suffisent pour que je vous
+        propose la formule la plus adaptée.
+      </p>
+      <a
+        href="/contact"
+        class="mt-6 inline-block rounded-sm bg-gold px-6 py-3 font-mono text-xs tracked-caps text-ink transition-transform hover:-translate-y-0.5"
+      >
+        Écrire à Immersive Quest
+      </a>
+    </div>
+  </section>
+</Layout>

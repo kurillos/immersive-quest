@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Sigil from '../../components/Sigil.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import { games, getGame } from '../../data/games';
+
+export function getStaticPaths() {
+  return games.map((game) => ({
+    params: { slug: game.slug },
+    props: { game },
+  }));
+}
+
+const { game } = Astro.props;
+const others = games.filter((g) => g.slug !== game.slug);
+---
+
+<Layout
+  title={game.name}
+  description={`${game.pitch} Découvrez l'univers ${game.name} proposé par Immersive Quest : ${game.atmosphere}.`}
+>
+  <section class="relative overflow-hidden border-b border-white/10" style={`--accent: ${game.accent}`}>
+    <Sigil
+      name={game.sigil}
+      class="pointer-events-none absolute -right-16 -top-16 h-96 w-96 text-[--accent] opacity-[0.07]"
+    />
+    <div class="relative z-10 mx-auto max-w-4xl px-6 py-20">
+      <a href="/jeux" class="font-mono text-xs tracked-caps text-parchment-dim hover:text-gold">← Les univers</a>
+
+      <div class="mt-6 flex items-center gap-3">
+        <span class="h-2 w-2 rounded-full bg-[--accent]"></span>
+        <p class="font-mono text-xs tracked-caps text-parchment-dim">{game.subtitle}</p>
+      </div>
+
+      <h1 class="mt-4 font-display text-4xl text-parchment sm:text-5xl">{game.name}</h1>
+      <p class="mt-5 max-w-xl font-body text-xl italic leading-relaxed text-[--accent]">{game.pitch}</p>
+      <p class="mt-6 max-w-2xl font-body leading-relaxed text-parchment-dim">{game.description}</p>
+
+      <a
+        href="/contact"
+        class="mt-10 inline-block rounded-sm px-7 py-3.5 font-mono text-xs tracked-caps text-ink transition-transform hover:-translate-y-0.5"
+        style="background-color: var(--accent)"
+      >
+        Réserver une partie {game.name}
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-16">
+    <dl class="grid grid-cols-2 gap-8 sm:grid-cols-4">
+      {[
+        ['Ambiance', game.atmosphere],
+        ['Joueurs', game.players],
+        ['Format', game.duration],
+        ['Public', game.audience],
+      ].map(([label, value]) => (
+        <div class="border-t border-gold/30 pt-4">
+          <dt class="font-mono text-[11px] tracked-caps text-parchment-dim">{label}</dt>
+          <dd class="mt-2 font-display text-lg text-parchment">{value}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <SectionDivider />
+
+  <section class="mx-auto max-w-4xl px-6 py-16">
+    <p class="font-mono text-xs tracked-caps text-gold">Autres univers</p>
+    <div class="mt-6 flex flex-wrap gap-4">
+      {others.map((other) => (
+        <a
+          href={`/jeux/${other.slug}`}
+          class="flex items-center gap-2 border border-white/10 px-4 py-2.5 font-body text-sm text-parchment-dim transition-colors hover:border-white/30 hover:text-parchment"
+        >
+          <span class="h-1.5 w-1.5 rounded-full" style={`background-color: ${other.accent}`}></span>
+          {other.name}
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

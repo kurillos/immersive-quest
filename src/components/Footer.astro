@@ -1,0 +1,42 @@
+---
+import Sigil from './Sigil.astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="relative z-10 border-t border-white/10">
+  <div class="mx-auto max-w-6xl px-6 py-12">
+    <div class="grid gap-10 md:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-2">
+          <Sigil name="d20" class="h-5 w-5 text-gold" />
+          <span class="font-display tracked-caps text-sm text-parchment">Immersive Quest</span>
+        </div>
+        <p class="mt-3 max-w-xs font-body text-sm leading-relaxed text-parchment-dim">
+          Maître du jeu professionnel. Des parties sur mesure, en présentiel ou en ligne, pour groupes d'amis, événements privés et entreprises.
+        </p>
+      </div>
+
+      <div>
+        <p class="font-mono text-xs tracked-caps text-gold">Navigation</p>
+        <ul class="mt-3 space-y-2 font-body text-sm text-parchment-dim">
+          <li><a href="/jeux" class="hover:text-parchment">Les univers de jeu</a></li>
+          <li><a href="/tarifs" class="hover:text-parchment">Tarifs & packs</a></li>
+          <li><a href="/contact" class="hover:text-parchment">Contact & réservation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-mono text-xs tracked-caps text-gold">Contact</p>
+        <ul class="mt-3 space-y-2 font-body text-sm text-parchment-dim">
+          <li><a href="mailto:contact@immersive-quest.fr" class="hover:text-parchment">contact@immersive-quest.fr</a></li>
+          <li>Île-de-France · présentiel & en ligne</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 font-mono text-xs text-parchment-dim/70 md:flex-row md:items-center md:justify-between">
+      <p>© {year} Immersive Quest. Tous droits réservés.</p>
+      <p>Que les dés soient avec vous.</p>
+    </div>
+  </div>
+</footer>

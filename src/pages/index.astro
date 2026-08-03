@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import GameCard from '../components/GameCard.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import Sigil from '../components/Sigil.astro';
+import { games } from '../data/games';
+
+const steps = [
+  {
+    title: 'On échange',
+    text: "Vous me parlez du groupe, de l'occasion et de l'ambiance recherchée. Je vous propose un univers et un format adaptés.",
+    sigil: 'compass' as const,
+  },
+  {
+    title: 'Je prépare',
+    text: "Scénario, personnages et matériel sont préparés sur mesure — rien de générique, tout est pensé pour votre table.",
+    sigil: 'scroll' as const,
+  },
+  {
+    title: 'Vous jouez',
+    text: "Je mène la partie, vous vivez l'histoire. Présentiel ou en ligne, le seul objectif : que vous en gardiez un souvenir.",
+    sigil: 'seal' as const,
+  },
+];
+---
+
+<Layout
+  title="Maître du jeu professionnel"
+  description="Immersive Quest conçoit et anime des parties de jeu de rôle sur mesure — D&D, Cthulhu, SotDL, Vampire — pour groupes, événements privés et entreprises."
+>
+  <Hero />
+
+  <!-- Univers -->
+  <section class="mx-auto max-w-6xl px-6 py-24">
+    <div class="max-w-xl">
+      <p class="font-mono text-xs tracked-caps text-gold">Quatre mondes, un même MJ</p>
+      <h2 class="mt-4 font-display text-3xl text-parchment sm:text-4xl">Choisissez votre univers</h2>
+      <p class="mt-4 font-body leading-relaxed text-parchment-dim">
+        Chaque univers a sa propre ambiance et sa propre couleur — repérez-les au fil du site pour vite
+        identifier ce qui vous correspond.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {games.map((game) => <GameCard game={game} compact />)}
+    </div>
+
+    <a
+      href="/jeux"
+      class="mt-10 inline-flex items-center gap-2 font-mono text-xs tracked-caps text-gold hover:opacity-80"
+    >
+      Voir le détail des quatre univers →
+    </a>
+  </section>
+
+  <SectionDivider />
+
+  <!-- Comment ça marche -->
+  <section class="mx-auto max-w-6xl px-6 py-24">
+    <div class="max-w-xl">
+      <p class="font-mono text-xs tracked-caps text-gold">Le déroulé</p>
+      <h2 class="mt-4 font-display text-3xl text-parchment sm:text-4xl">De l'idée à la table</h2>
+    </div>
+
+    <div class="mt-12 grid gap-10 md:grid-cols-3">
+      {steps.map((step) => (
+        <div class="border-t border-gold/30 pt-6">
+          <Sigil name={step.sigil} class="h-8 w-8 text-gold" />
+          <h3 class="mt-4 font-display text-xl text-parchment">{step.title}</h3>
+          <p class="mt-3 font-body text-sm leading-relaxed text-parchment-dim">{step.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- CTA final -->
+  <section class="mx-auto max-w-6xl px-6 py-24 text-center">
+    <h2 class="mx-auto max-w-2xl font-display text-3xl leading-snug text-parchment sm:text-4xl">
+      La prochaine session mémorable de votre groupe commence par un message.
+    </h2>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="/contact"
+        class="rounded-sm bg-gold px-7 py-3.5 font-mono text-xs tracked-caps text-ink transition-transform hover:-translate-y-0.5"
+      >
+        Réserver une partie
+      </a>
+      <a
+        href="/tarifs"
+        class="rounded-sm border border-parchment-dim/40 px-7 py-3.5 font-mono text-xs tracked-caps text-parchment transition-colors hover:border-gold hover:text-gold"
+      >
+        Voir les tarifs
+      </a>
+    </div>
+  </section>
+</Layout>

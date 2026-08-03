@@ -1,0 +1,54 @@
+---
+import Sigil from './Sigil.astro';
+---
+
+<section class="relative overflow-hidden border-b border-white/10">
+  <!-- Signature ambient d20, faint, right side -->
+  <Sigil
+    name="d20"
+    class="pointer-events-none absolute -right-24 -top-20 h-[520px] w-[520px] text-gold/[0.06] md:-right-16 md:-top-32"
+  />
+
+  <div class="relative z-10 mx-auto max-w-6xl px-6 py-24 md:py-36">
+    <p class="font-mono text-xs tracked-caps text-gold">Maître du jeu professionnel</p>
+
+    <h1 class="mt-6 max-w-3xl font-display text-4xl leading-[1.15] text-parchment sm:text-5xl md:text-6xl">
+      Votre table.<br />
+      <span class="text-gold">Votre légende.</span>
+    </h1>
+
+    <p class="mt-6 max-w-xl font-body text-lg leading-relaxed text-parchment-dim">
+      Je conçois et anime des parties de jeu de rôle sur mesure — fantasy, horreur ou gothique — pour
+      groupes d'amis, événements privés et entreprises. Vous vivez l'histoire ; je m'occupe de tout le reste.
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <a
+        href="/contact"
+        class="rounded-sm bg-gold px-6 py-3 font-mono text-xs tracked-caps text-ink transition-transform hover:-translate-y-0.5"
+      >
+        Réserver une partie
+      </a>
+      <a
+        href="/jeux"
+        class="rounded-sm border border-parchment-dim/40 px-6 py-3 font-mono text-xs tracked-caps text-parchment transition-colors hover:border-gold hover:text-gold"
+      >
+        Découvrir les univers
+      </a>
+    </div>
+
+    <dl class="mt-20 grid max-w-2xl grid-cols-2 gap-8 sm:grid-cols-4">
+      {[
+        ['4', 'univers de jeu'],
+        ['3–6', 'joueurs par table'],
+        ['100%', 'sur mesure'],
+        ['Présentiel', 'ou en ligne'],
+      ].map(([value, label]) => (
+        <div>
+          <dt class="font-display text-2xl text-parchment">{value}</dt>
+          <dd class="mt-1 font-mono text-[11px] tracked-caps text-parchment-dim">{label}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

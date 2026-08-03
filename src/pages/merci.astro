@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sigil from '../components/Sigil.astro';
+---
+
+<Layout
+  title="Message envoyé"
+  description="Votre demande a bien été envoyée à Immersive Quest."
+>
+  <section class="mx-auto flex max-w-2xl flex-col items-center px-6 py-32 text-center">
+    <Sigil name="d20" class="h-16 w-16 text-gold" />
+    <h1 class="mt-8 font-display text-3xl text-parchment sm:text-4xl">Requête reçue.</h1>
+    <p class="mt-4 font-body leading-relaxed text-parchment-dim">
+      Votre message a bien été envoyé. Je reviens vers vous sous 48h pour organiser votre prochaine partie.
+    </p>
+    <a
+      href="/"
+      class="mt-10 inline-block rounded-sm border border-gold/50 px-6 py-3 font-mono text-xs tracked-caps text-gold transition-colors hover:bg-gold hover:text-ink"
+    >
+      Retour à l'accueil
+    </a>
+  </section>
+</Layout>

@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sigil from '../components/Sigil.astro';
+---
+
+<Layout title="Page introuvable" description="Cette page n'existe pas.">
+  <section class="mx-auto flex max-w-2xl flex-col items-center px-6 py-32 text-center">
+    <Sigil name="skull" class="h-16 w-16 text-gold/60" />
+    <h1 class="mt-8 font-display text-3xl text-parchment sm:text-4xl">Jet de recherche raté.</h1>
+    <p class="mt-4 font-body leading-relaxed text-parchment-dim">
+      Cette page n'existe pas, ou a été engloutie par un portail instable. Retournez à un endroit connu.
+    </p>
+    <a
+      href="/"
+      class="mt-10 inline-block rounded-sm border border-gold/50 px-6 py-3 font-mono text-xs tracked-caps text-gold transition-colors hover:bg-gold hover:text-ink"
+    >
+      Retour à l'accueil
+    </a>
+  </section>
+</Layout>

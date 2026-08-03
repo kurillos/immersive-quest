@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Sigil from '../components/Sigil.astro';
+---
+
+<Layout
+  title="Contact"
+  description="Réservez votre partie de jeu de rôle sur mesure avec Immersive Quest : décrivez votre groupe et votre projet, réponse sous 48h."
+>
+  <section class="mx-auto grid max-w-6xl gap-16 px-6 py-20 lg:grid-cols-[1fr_1.3fr]">
+    <div>
+      <p class="font-mono text-xs tracked-caps text-gold">Prenons contact</p>
+      <h1 class="mt-4 font-display text-4xl text-parchment sm:text-5xl">Lancez la quête</h1>
+      <p class="mt-5 font-body leading-relaxed text-parchment-dim">
+        Décrivez votre groupe, l'occasion et l'univers qui vous attire. Je reviens vers vous sous 48h avec
+        une proposition adaptée.
+      </p>
+
+      <div class="mt-12 space-y-6 border-t border-white/10 pt-8">
+        <div class="flex gap-4">
+          <Sigil name="scroll" class="h-6 w-6 shrink-0 text-gold" />
+          <div>
+            <p class="font-display text-parchment">Réponse sous 48h</p>
+            <p class="mt-1 font-body text-sm text-parchment-dim">Par email, avec une proposition de formule.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <Sigil name="compass" class="h-6 w-6 shrink-0 text-gold" />
+          <div>
+            <p class="font-display text-parchment">Présentiel ou en ligne</p>
+            <p class="mt-1 font-body text-sm text-parchment-dim">Île-de-France en présentiel, partout ailleurs en ligne.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border border-white/10 bg-ink-raised p-6 sm:p-10">
+      <ContactForm />
+    </div>
+  </section>
+</Layout>

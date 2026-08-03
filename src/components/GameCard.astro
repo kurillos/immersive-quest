@@ -1,0 +1,43 @@
+---
+import Sigil from './Sigil.astro';
+import type { Game } from '../data/games';
+
+interface Props {
+  game: Game;
+  compact?: boolean;
+}
+
+const { game, compact = false } = Astro.props;
+---
+
+<a
+  href={`/jeux/${game.slug}`}
+  class="group relative flex flex-col justify-between overflow-hidden border border-white/10 bg-ink-raised p-7 transition-colors hover:border-[--accent]"
+  style={`--accent: ${game.accent}`}
+>
+  <div
+    class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[--accent] opacity-0 transition-opacity group-hover:opacity-100"
+  ></div>
+
+  <div>
+    <div class="flex items-center gap-2">
+      <span class="h-1.5 w-1.5 rounded-full bg-[--accent]"></span>
+      <p class="font-mono text-[11px] tracked-caps text-parchment-dim">{game.subtitle}</p>
+    </div>
+
+    <h3 class="mt-4 font-display text-2xl text-parchment">{game.name}</h3>
+    <p class="mt-3 font-body italic leading-relaxed text-parchment-dim">{game.pitch}</p>
+
+    {!compact && (
+      <p class="mt-4 font-body text-sm leading-relaxed text-parchment-dim/90">{game.description}</p>
+    )}
+  </div>
+
+  <div class="mt-8 flex items-center justify-between border-t border-white/10 pt-5">
+    <dl class="font-mono text-[11px] text-parchment-dim">
+      <div class="flex gap-2"><dt class="text-[--accent]">·</dt><dd>{game.players}</dd></div>
+      <div class="mt-1 flex gap-2"><dt class="text-[--accent]">·</dt><dd>{game.duration}</dd></div>
+    </dl>
+    <Sigil name={game.sigil} class="h-9 w-9 text-[--accent] opacity-80 transition-transform group-hover:scale-110" />
+  </div>
+</a>

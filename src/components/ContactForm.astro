@@ -1,0 +1,112 @@
+---
+import { games } from '../data/games';
+import { packs } from '../data/packs';
+---
+
+<form
+  name="contact-quest"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/merci"
+  class="space-y-6"
+>
+  <input type="hidden" name="form-name" value="contact-quest" />
+  <p class="hidden">
+    <label>Ne pas remplir : <input name="bot-field" /></label>
+  </p>
+
+  <div class="grid gap-6 sm:grid-cols-2">
+    <div>
+      <label for="name" class="mb-2 block font-mono text-xs tracked-caps text-parchment-dim">
+        Nom
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="w-full border border-white/15 bg-ink px-4 py-3 text-parchment placeholder:text-parchment-dim/50 focus:border-gold focus:outline-none"
+        placeholder="Eldrin"
+      />
+    </div>
+
+    <div>
+      <label for="email" class="mb-2 block font-mono text-xs tracked-caps text-parchment-dim">
+        Email
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="w-full border border-white/15 bg-ink px-4 py-3 text-parchment placeholder:text-parchment-dim/50 focus:border-gold focus:outline-none"
+        placeholder="vous@exemple.fr"
+      />
+    </div>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2">
+    <div>
+      <label for="game" class="mb-2 block font-mono text-xs tracked-caps text-parchment-dim">
+        Univers souhaité
+      </label>
+      <select
+        id="game"
+        name="game"
+        class="w-full border border-white/15 bg-ink px-4 py-3 text-parchment focus:border-gold focus:outline-none"
+      >
+        {games.map((game) => (
+          <option value={game.name}>{game.name}</option>
+        ))}
+        <option value="Je ne sais pas encore">Je ne sais pas encore</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="pack" class="mb-2 block font-mono text-xs tracked-caps text-parchment-dim">
+        Pack envisagé
+      </label>
+      <select
+        id="pack"
+        name="pack"
+        class="w-full border border-white/15 bg-ink px-4 py-3 text-parchment focus:border-gold focus:outline-none"
+      >
+        {packs.map((pack) => (
+          <option value={pack.name}>{pack.name}</option>
+        ))}
+        <option value="À définir ensemble">À définir ensemble</option>
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <label for="message" class="mb-2 block font-mono text-xs tracked-caps text-parchment-dim">
+      Détails de votre projet
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      required
+      class="w-full border border-white/15 bg-ink px-4 py-3 text-parchment placeholder:text-parchment-dim/50 focus:border-gold focus:outline-none"
+      placeholder="Nombre de joueurs, date souhaitée, présentiel ou en ligne, occasion..."
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="group inline-flex items-center gap-3 rounded-sm bg-gold px-7 py-3.5 font-mono text-xs tracked-caps text-ink transition-transform hover:-translate-y-0.5"
+  >
+    Envoyer la requête
+    <svg
+      viewBox="0 0 100 100"
+      class="h-4 w-4 transition-transform duration-500 group-hover:rotate-[72deg]"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="6"
+    >
+      <path d="M50 4 L93 27 V73 L50 96 L7 73 V27 Z" stroke-linejoin="round" />
+    </svg>
+  </button>
+</form>
