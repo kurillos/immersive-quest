@@ -17,7 +17,7 @@ export interface Game {
 export const games: Game[] = [
   {
     slug: 'dnd5',
-    name: 'Donjons & Dragons 5e',
+    name: 'Heroic Fantasy 5e',
     subtitle: 'Fantasy héroïque',
     accent: 'var(--dnd)',
     pitch: "Épée, magie et légendes à écrire à plusieurs.",
@@ -31,7 +31,7 @@ export const games: Game[] = [
   },
   {
     slug: 'cthulhu',
-    name: "L'Appel de Cthulhu",
+    name: "Enquête horrifique année 20",
     subtitle: 'Horreur & enquête',
     accent: 'var(--cthulhu)',
     pitch: "Chaque indice a un prix. La raison aussi.",
@@ -45,7 +45,7 @@ export const games: Game[] = [
   },
   {
     slug: 'sotdl',
-    name: "L'Ombre du Seigneur Démon",
+    name: "Dark Fantasy - Joueurs adulte uniquement",
     subtitle: 'Dark fantasy',
     accent: 'var(--sotdl)',
     pitch: "Le monde se meurt. Vous choisissez comment y survivre.",
@@ -59,7 +59,7 @@ export const games: Game[] = [
   },
   {
     slug: 'vampire',
-    name: 'Vampire : La Mascarade',
+    name: 'Vampire',
     subtitle: 'Gothique & politique',
     accent: 'var(--vampire)',
     pitch: "Immortel, affamé, et pris dans les intrigues de votre propre clan.",
