@@ -31,7 +31,7 @@ export const games: Game[] = [
   },
   {
     slug: 'cthulhu',
-    name: "Enquête horrifique année 20",
+    name: "Enquête horrifique années 20s",
     subtitle: 'Horreur & enquête',
     accent: 'var(--cthulhu)',
     pitch: "Chaque indice a un prix. La raison aussi.",
