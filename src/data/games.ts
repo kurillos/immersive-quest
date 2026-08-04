@@ -45,7 +45,7 @@ export const games: Game[] = [
   },
   {
     slug: 'sotdl',
-    name: "Dark Fantasy - Joueurs adulte uniquement",
+    name: "Dark Fantasy",
     subtitle: 'Dark fantasy',
     accent: 'var(--sotdl)',
     pitch: "Le monde se meurt. Vous choisissez comment y survivre.",
@@ -54,7 +54,7 @@ export const games: Game[] = [
     atmosphere: 'Sombre, brutale, littéraire',
     players: '3 à 5 joueurs',
     duration: 'One-shot ou mini-chronique',
-    audience: 'Joueurs confirmés',
+    audience: 'Adultes uniquement',
     sigil: 'skull',
   },
   {
