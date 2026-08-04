@@ -16,7 +16,7 @@ export const packs: Pack[] = [
     id: 'decouverte',
     name: 'Initiation & One-Shot',
     tagline: 'One-shot, scénario bouclé en une soirée (Particuliers)',
-    price: 'à partir de 40 €',
+    price: 'à partir de 20 €',
     priceDetail: 'par joueur',
     format: '3 à 4 heures, présentiel ou en ligne',
     includes: [
@@ -37,7 +37,7 @@ export const packs: Pack[] = [
     id: 'mini-chronique',
     name: 'Série & Chronique (Particuliers)',
     tagline: 'Un arc narratif complet, sans engagement long',
-    price: 'à partir de 135 € / Joueur',
+    price: 'à partir de 80 € / Joueur',
     priceDetail: 'pour 3 à 5 sessions',
     format: 'Sessions de 3h, rythme au choix du groupe',
     includes: [
@@ -58,7 +58,7 @@ export const packs: Pack[] = [
     id: 'legende',
     name: 'Légende',
     tagline: 'Prestation clé-en-main, présentiel premium',
-    price: '88€ / joueurs',
+    price: '58€ / joueurs',
     priceDetail: 'selon mise en scène',
     format: 'Présentiel, matériel complet inclus',
     includes: [
